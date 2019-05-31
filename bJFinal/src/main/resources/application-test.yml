@@ -1,0 +1,30 @@
+server:
+  port: 8231
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    dbType: mysql
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://127.0.0.1/cloud?characterEncoding=utf-8&amp;useSSL=false&amp;useUnicode=true
+    initialSize: 5
+    maxActive: 300
+    maxWait: 60000
+    minIdle: 5
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=2000
+    #是否自动回收超时连接
+    removeAbandoned: true
+    #超时时间(以秒数为单位)
+    removeAbandonedTimeout: 1800
+    #log中打印出回收Connection的错误信息
+    logAbandoned: true
